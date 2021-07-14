@@ -10,18 +10,25 @@ const static ll mod = 1000000007;
 const static ll inf = 1000000000000;
 
 ll ans, n, m, h, w, dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1};
+ll dp[100010][3];
 
-long long modify(ll a, ll m)
-{
-	a %= m;
-	if (a < 0)
-	{
-		a += m;
-	}
-	return a;
-}
 int main()
 {
 	cin >> n;
+	ll happiness[n][3];
+	REP(i, n) { cin >> happiness[i][0] >> happiness[i][1] >> happiness[i][2]; }
+	REP(i, n)
+	{
+		REP(j, 3)
+		{
+			dp[i + 1][j] = max(dp[i][(j + 1) % 3] + happiness[i][(j + 1) % 3], dp[i][(j + 2) % 3] + happiness[i][(j + 2) % 3]);
+		}
+	}
+	ll ans = 0;
+	REP(i, 3)
+	{
+		ans = max(ans, dp[n][i]);
+	}
+	cout << ans << endl;
 	return (0);
 }
