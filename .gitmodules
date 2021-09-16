@@ -1,3 +1,6 @@
 [submodule "kyopro_educational_90/kyopro_educational_90"]
 	path = kyopro_educational_90/kyopro_educational_90
 	url = git@github.com:E869120/kyopro_educational_90.git
+[submodule "typical90/kyopro_educational_90"]
+	path = typical90/kyopro_educational_90
+	url = git@github.com:E869120/kyopro_educational_90.git
